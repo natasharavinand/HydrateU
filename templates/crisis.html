@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Global Water Crisis
+{% endblock %}
+
+{% block main %}
+<h1 id="mainheader">HydrateU</h1>
+<body background="/static/images/starterPage.jpeg">
+
+{% if session.user_id %}
+
+<div class="jumbotron jumbotronBrown">
+  <h1 class="display-4">The Global Water Crisis desires our immediate attention.</h1>
+  <p class="lead">Water is essential to life, yet 785 million people in the world - 1 in 9 - lack access to it. According to a report by the World Economic Forum, the water crisis is the #4 global risk in terms of impact to society.
+  More than six times the population of the United States lives without a household water connection.</p>
+  <hr class="my-4">
+  <img src="/static/images/map.jpeg" class="card-img-top" alt="...">
+  <p></p>
+  <hr class="my-4">
+  <p>*All information from <a href="https://water.org/our-impact/water-crisis/global-water-crisis/">Water.org</a> and <a href="https://www.worldwildlife.org/threats/water-scarcity">WorldWildLife.org</a></p>
+  <a class="btn btn-primary btn-lg" href="/contribute" role="button">Help</a>
+</div>
+
+
+<div class="card-columns">
+  <div class="card">
+    <img src="/static/images/gettingWater.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Clean water can change everything.</h5>
+      <p class="card-text">Health, education, women empowerment and more are all connected to access to clean water.</p>
+    </div>
+  </div>
+  <div class="card p-3">
+    <blockquote class="blockquote mb-0 card-body">
+      <p>"In this century wars will not be fought over oil, as in the past, but over water...As people who deal with the ocean you must see the irony. We are facing a shortage on a planet whose surface is covered two-thirds with water.”</p>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          Clive Cussler <cite title="Source Title">Blue Gold</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card">
+    <img src="/static/images/potWater.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">A Health Crisis</h5>
+      <p class="card-text">Nearly 1 million people die each year from water, sanitation and hygiene-related diseases which could be reduced with access to safe water or sanitation. Every 2 minutes a child dies from a water-related disease. Access to safe water and sanitation contributes to improved health and helps prevent the spread of infectious disease.
+      It means reduced child and maternal mortality rates. It means reduced physical injury from constant lifting and carrying heavy loads of water.</p>
+    </div>
+  </div>
+  <div class="card bg-primary text-white text-center p-3">
+    <blockquote class="blockquote mb-0">
+      <p>“If the earth is a mother then rivers are her veins.”</p>
+      <footer class="blockquote-footer text-white">
+        <small>
+          ― Amit Kalantri <cite title="Source Title">Wealth of Words</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card p-3 text-right">
+    <blockquote class="blockquote mb-0">
+      <p>“The earth was thirsty, with the memories of trees long cut, and it’s surface hardened, that long since rain soaked.”</p>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          Meeta Ahluwalia
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card">
+    <img src="static/images/charityAnimation.jpeg" class="card-img-top" alt="...">
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Economic Crisis and Lost Opportunity</h5>
+      <p class="card-text">$260 billion is lost globally each year due to lack of basic water and sanitation. Access to safe water and sanitation at home turns time spent into time saved,
+      giving families more time to pursue education and work opportunities that will help them break the cycle of poverty.</p>
+    </div>
+  </div>
+</div>
+
+<p>
+
+</p>
+<div class="jumbotron jumbotronDark">
+  <h1 class="display-4">The Future of Water</h1>
+  <p class="lead">The world’s supply of cheap and clean fresh water will likely plummet as the climate warms and populations boom. Can we find ways to conserve, cut waste, and find new sources before it’s too late?
+  For the residents of Windhoek, Namibia, the arid future arrived long before the growing freshwater crisis made headlines around the world.
+And this city responded to worsening cycles of drought by tapping water resources from a radical source that was already on hand: wastewater from their own city sewers. And while the technology for building a toilet-to-tap management system isn’t new, the mindset required to do here offers a lesson to any city facing an increasingly arid future.
+</p>
+  <hr class="my-4">
+  <p class="card-text"><small class="text-muted">Created by <a href="https://water.org/our-impact/water-crisis/global-water-crisis/">Quartz</a></small></p>
+<iframe class="padtomiddle" width="560" height="315" src="https://www.youtube.com/embed/4URapRHxsmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid jumbotronBrown">
+  <div class="container">
+    <h1 class="display-4">Causes of Water Scarcity</h1>
+    <p class="lead">Main causes of water scarcity in today's world include pollution, agriculture, population growth, and climate change.</p>
+  </div>
+</div>
+
+<div class="card-deck">
+  <div class="card text-white bg-danger mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Pollution</h5>
+      <p class="card-text">Water pollution comes from many sources including pesticides and fertilizers that wash away from farms, untreated human wastewater, and industrial waste. Even groundwater is not safe from pollution, as many pollutants can leach into underground aquifers.
+      </p><p>Some effects are immediate, as when harmful bacteria from human waste contaminate water and make it unfit to drink or swim in. In other instances—such as toxic substances from industrial processes—it may take years to build up in the environment and food chain before their effects are fully recognized.
+</p>
+    </div>
+  </div>
+  <div class="card text-white bg-primary mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Population Growth</h5>
+      <p class="card-text">In the last 50 years, the human population has more than doubled. This rapid growth— with its accompanying economic development and industrialization—has transformed water ecosystems around the world and resulted in a massive loss of biodiversity.
+      </p><p>Today, 41% of the world’s population lives in river basins that are under water stress. Concern about water availability grows as freshwater use continues at unsustainable levels. Furthermore, these new faces also need food, shelter, and clothing, thus resulting in additional pressure on freshwater through the production of commodities and energy.
+
+</p>
+    </div>
+  </div>
+  <div class="card text-white bg-dark mb-3">
+    <div class="card-body">
+      <h5 class="card-title">Climate Change</h5>
+      <p class="card-text">As humans continue to pump more carbon dioxide and other greenhouse gases into the atmosphere, patterns of weather and water will change around the world. Droughts will become more common in some places, floods in others.
+      </p><p>Glaciers and snow packs will disappear in some areas, affecting the freshwater supplies to those downstream communities.
+      </p><p>These changes will combine to make less water available for agriculture, energy generation, cities and ecosystems around the world.
+
+</p>
+    </div>
+  </div>
+</div>
+<p></p>
+
+<div class="jumbotron jumbotronDark">
+  <h1 class="display-4">Three Mothers, Three Stories</h1>
+  <p class="lead">Narrated by Jodie Foster, watch the inspiring stories of three mothers who broke the cycle of poverty, and found a path to water. Each from different parts of the world, these women shared the need for access to water and sanitation at home. Discover how they overcame their water crises with small, affordable loans we call WaterCredit. The loans empowered each woman with the funds needed to purchase safe water and sanitation solutions for their families.
+</p>
+  <hr class="my-4">
+  <p class="card-text"><small class="text-muted">Created by <a href="https://water.org/our-impact/water-crisis/global-water-crisis/">Water.org</a></small></p>
+  <iframe class="padtomiddle" style="float:center" width="560" height="315" src="https://www.youtube.com/embed/ZkStObhWjnI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+    <div class="card" style="background-color:#202c45; color:white;">
+      <img src="/static/images/ladyWater.jpeg" class="card-img-top" alt="...">
+      <p class="card-text"><small class="text-muted">Woman filling a cup of water from a device</small></p>
+      <div class="card-body">
+        <h5 class="card-title">Water Access Impacts Women and Children</h5>
+        <p class="card-text">Many of these individuals affected acutely by the water crisis are women
+  and children who spend crucial time retrieving water over caring for families or pursuing education.</p>
+      <p class="card-text">They may stand in line and wait for water, they may walk long distances to collect water, or they may pay exorbitant amounts of money to secure water. In their efforts to get water for their families,
+      they often face an impossible choice - certain death without water or possible death due to illness from dirty water. </p>
+      <p class="card-text">Today, women around the world will spend a collective 200 million hours collecting water.
+      In addition to time spent collecting water, millions may also spend significant amounts of time finding a place to go.
+      This makes up an additional 266 million hours of time each day lost because they have no toilet at home. </p>
+      <p class-"card-text">Access to safe water is critical to the health of women and their babies during pregnancy and after. Walking to collect water and carrying heavy vessels of water can be dangerous for a pregnant woman. Further, the consumption of unsafe water can be harmful to the health of both mom and her baby. From maintaining a healthy pregnancy to nourishing a newborn child, women need safe water at home.
+
+</p>
+      </div>
+    </div>
+  </div>
+<p>
+
+</p>
+
+<div class="jumbotron jumbotronBrown">
+  <h1 class="display-4">Contribute to Leading Organizations</h1>
+  <p class="lead">Click the button below to be directed to organizations to donate and volunteer.</p>
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="/contribute" role="button">Contribute</a>
+</div>
+
+
+{% else %}
+
+<p class="tagline">Hydrate better.</p>
+<p class="tagline">Learn more about the global water crisis.</p>
+<p class="tagline">Contribute to good.</p>
+<a href="/register" class="btn btn-secondary btn-lg btn-block">Join Now</a>
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Hydration Log
+{% endblock %}
+
+{% block main %}
+  <h1 id="mainheader" style="color:#eeeeee;">HydrateU</h1>
+  <body background="/static/images/goals.jpeg">
+
+  {% if session.user_id %}
+
+  <div class="jumbotron jumbotronBrown">
+      <h1 class="display-4">Hydration for Today</h1>
+      <p>Your current goal is to drink {{ goal }} glasses today.</p>
+      <p> </p>
+      {% if currentGlassesDrank == 0 %}
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      {% endif %}
+      {% if currentGlassesDrank == 1 %}
+        <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 12.5%" aria-valuenow="12.5" aria-valuemin="0" aria-valuemax="100">12.5%</div>
+      </div>
+      <p> </p>
+      <p class="lead">Drink at least 7 more glasses to reach at least 8 glasses for today (minimum recommended by health authorities).</p>
+      {% endif %}
+      {% if currentGlassesDrank == 2 %}
+        <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+      </div>
+      <p> </p>
+      <p class="lead">Drink at least 6 more glasses to reach at least 8 glasses for today (minimum recommended by health authorities).</p>
+      {% endif %}
+      {% if currentGlassesDrank == 3 %}
+        <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 37.5%" aria-valuenow="37.5" aria-valuemin="0" aria-valuemax="100">37.5%</div>
+      </div>
+      <p> </p>
+      <p class="lead">Drink at least 5 more glasses to reach at least 8 glasses for today (minimum recommended by health authorities).</p>
+      {% endif %}
+      {% if currentGlassesDrank == 4 %}
+        <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+      </div>
+      <p> </p>
+      <p class="lead">Drink at least 4 more glasses to reach at least 8 glasses for today (minimum recommended by health authorities).</p>
+      {% endif %}
+      {% if currentGlassesDrank == 5 %}
+        <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 62.5%" aria-valuenow="62.5" aria-valuemin="0" aria-valuemax="100">62.5%</div>
+      </div>
+      <p> </p>
+      <p class="lead">Drink at least 3 more glasses to reach at least 8 glasses for today (minimum recommended by health authorities).</p>
+      {% endif %}
+      {% if currentGlassesDrank == 6 %}
+        <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+      </div>
+      <p> </p>
+      <p class="lead">Drink at least 2 more glasses to reach at least 8 glasses for today (minimum recommended by health authorities).</p>
+      {% endif %}
+      {% if currentGlassesDrank == 7 %}
+        <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 87.5%" aria-valuenow="87.5" aria-valuemin="0" aria-valuemax="100">87.5%</div>
+      </div>
+      <p> </p>
+      <p class="lead">Drink at least 1 more glasses to reach at least 8 glasses for today (minimum recommended by health authorities).</p>
+      {% endif %}
+      {% if currentGlassesDrank >= 8 %}
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+        </div>
+        <p> </p>
+        <p class="lead">Congrats! You've drank at least 8 glasses today.</p>
+        <p style="color:white;">Health authorities commonly recommend at least eight 8-ounce glasses, which equals about 2 liters, or half a gallon.</p>
+
+      {% endif %}
+      <p> </p>
+
+      <a class="btn btn-primary btn-lg" href="/goals" role="button">Change Your Goal</a>
+      <p> </p>
+    </div>
+
+
+  <div class="jumbotron jumbotronDark">
+      <h1 class="display-4">Hydration Log</h1>
+      <p class="lead">Check your previous logs to see how you're doing.</p>
+      <p> </p>
+      <p class="card-text"><small class="text-muted">Calendar created with regards to Coordinated Universal Time (UTC) for functionality.</small></p>
+      <div class="card-deck" style="text-align:center;">
+        <div class="card text-white bg-success mb-3">
+          <div class="card-body">
+            <h5 class="card-title" style= "font-size:100px;">{{ reached }}</h5>
+            <p class="card-text">Days Goal Reached</p>
+          </div>
+        </div>
+        <div class="card text-white bg-danger mb-3">
+          <div class="card-body">
+            <h5 class="card-title" style= "font-size:100px;">{{ notReached }}</h5>
+            <p class="card-text">Days Goal Not Reached</p>
+          </div>
+        </div>
+        <div class="card text-white bg-info mb-3">
+          <div class="card-body">
+            <h5 class="card-title" style= "font-size:70px;">{{ successRate }}%</h5>
+            <p> </p>
+            <p class="card-text">of Days You Succeed</p>
+          </div>
+        </div>
+      </div>
+      <p> </p>
+      <div class="row row-cols-1 row-cols-md-2">
+        {% for day in everyDayData %}
+          <div class="col mb-4">
+            <div class="card card-middle" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title" style="color:black;">{{ day["date"] }}</h5>
+              {% if day["reachedGoal"] == 1 %}
+                <h6 class="card-subtitle mb-2" style="color:green;">Goal Reached!</h6>
+              {% else %}
+                <h6 class="card-subtitle mb-2" style="color:red;">Goal Not Reached</h6>
+              {% endif %}
+              <p class="card-text" style="color:black;">You drank {{ day["glassesDrank"] }} glasses of water this day.</p>
+            </div>
+          </div>
+        </div>
+        <p></p>
+        {% endfor %}
+      </div>
+      <p> </p>
+    </div>
+
+
+
+    <div class="jumbotron jumbotronBrown">
+        <h1 class="display-4">Log Your Water</h1>
+        <p class="lead">Log water today to keep track of your hydration and keep to your goals.</p>
+        <div class="card text-white bg-info mb-3 card-middle" style="max-width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Log a Glass of Water</h5>
+            <form action="/hydrationLog" method="post">
+                <select class="form-control" name="addGlass" id="addGlass">
+                    {% for i in range(50) %}
+                        <option>{{ i }}</option>
+                    {% endfor %}
+                </select>
+                <p></p>
+                <button class="btn btn-primary" type="submit">Log</button>
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  {% else %}
+
+    <p class="tagline">Hydrate better.</p>
+    <p class="tagline">Learn more about the global water crisis.</p>
+    <p class="tagline">Contribute to good.</p>
+    <a href="/register" class="btn btn-secondary btn-lg btn-block">Join Now</a>
+
+  {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,8 @@
+-CS50 IDE
+-Flask (and Session)
+-Bootstrap
+-SQLite (hydrateU.db)
+-Python
+-HTML
+-CSS
+-hydrateU folder

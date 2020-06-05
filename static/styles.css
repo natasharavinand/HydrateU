@@ -1,0 +1,99 @@
+#mainheader {
+    font-family: Comfortaa;
+    font-size: 125px;
+    text-align:center;
+    color:#434343;
+}
+
+.tagline {
+    font-family: Comfortaa;
+    font-size: 20px;
+    text-align:center;
+    color:grey;
+}
+
+.jumboTransparent {
+    background: none
+}
+
+
+#registerJumbo {
+    color:white;
+}
+
+#setGoals {
+    padding-right:300px;
+}
+
+#goalSelector {
+    padding-right:150px;
+}
+
+#hydrationCard {
+    padding-right:89px;
+}
+
+#waterCrisisCard {
+    padding-right:89px;
+}
+
+
+
+.whiteText {
+    color: white;
+}
+
+.border-black {
+    border-color:black;
+}
+
+.card-middle {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.image-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resize-picture {
+    width: 70%;
+    height:70%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resize-picture-left {
+    width: 40%;
+    height:40%;
+    margin-left:auto;
+}
+
+.resize-picture-right {
+    width: 70%;
+    height:70%;
+}
+
+.paddingbottom {
+    padding-bottom:30px;
+    padding-top:30px;
+}
+
+.padtomiddle {
+    display: block;
+    margin: 0 auto;
+}
+
+.jumbotronDark {
+    background-color:#202c45;
+    color:white;
+}
+
+.jumbotronBrown {
+    background-color:#802c2c;
+    color:white;
+}

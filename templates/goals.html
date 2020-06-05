@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Set Goals
+{% endblock %}
+
+{% block main %}
+    <body background="/static/images/goals.jpeg">
+    <table>
+        <tr>
+            <td id="setGoals">
+                <div class="jumbotron jumbotron-fluid jumboTransparent">
+                  <div class="container">
+                    <h1 class="display-4">Hydration Goals</h1>
+                    <p class="lead">Set your goals.</p>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+                      What should my goal be?
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Set Healthy Goals</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Health authorities commonly recommend at least eight 8-ounce glasses, which equals about 2 liters, or half a gallon.
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </td>
+            <td>
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Current Goal</h5>
+                    <p class="card-text">Your current goal is to drink {{ goal }} 8oz glasses of water per day.</p>
+                  </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <form action="/goals" method="post">
+        <select class="form-control" name="updateGoal" id="goalSelector">
+            {% for i in range(8, 50) %}
+                <option>{{ i }}</option>
+            {% endfor %}
+        </select>
+        <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+{% endblock %}

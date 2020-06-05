@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contribute
+{% endblock %}
+
+{% block main %}
+<h1 id="mainheader" style="color:#eeeeee;">HydrateU</h1>
+<body background="/static/images/goals.jpeg">
+
+{% if session.user_id %}
+
+<div class="jumbotron jumbotron-fluid jumbotronBrown">
+  <div class="container">
+    <h1 class="display-4">Contribute and Help.</h1>
+    <p class="lead">Find descriptions and links to contribute to some of the leading charities and organizations in the space.</p>
+    <p class="card-text"><small class="text-muted">Information from Wikipedia and/or organizations themselves.</small></p>
+  </div>
+</div>
+
+
+<div class="jumbotron jumbotronDark">
+  <h1 class="display-4">Charity : Water</h1>
+  <p class="lead">Charity: Water is a non-profit organization founded in 2006 that provides drinking water to people in developing nations. As of 2019, the organization has raised $370 million. According to the organization, it has funded 44,000 water projects in 28 countries.</p>
+  <iframe class="padtomiddle" width="560" height="315" src="https://www.youtube.com/embed/rphhfy4qCfc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p> </p>
+  <a class="btn btn-primary btn-lg" href="https://www.charitywater.org/donate" role="button">Donate to Charity : Water</a>
+
+</div>
+
+
+<div class="jumbotron jumbotronBrown">
+  <h1 class="display-4">Water.org</h1>
+  <p class="lead">Water.org is a global nonprofit organization working to bring water and sanitation to the world and make it safe, accessible, and cost-effective.</p>
+  <p class="lead">The organization has empowered more than 25 million people in 16 countries with access to safe water, sanitation, and the hope, health and opportunities they bring. And they are expanding their work and reaching more people in need, faster.
+</p>
+  <div class="card-deck">
+  <div class="card">
+    <img src="/static/images/waterOrg.jpeg" class="card-img-top" alt="...">
+  </div>
+  <div class="card">
+    <img src="/static/images/worldChangers.jpeg" class="card-img-top" alt="...">
+  </div>
+</div>
+  <p></p>
+  <p class="lead">By November 2019 they have reached more than 25 million people with access to safe water and sanitation through financing.</p>
+  <img src="/static/images/childWaterOrg.jpeg" class="card-img-top resize-picture" alt="...">
+  <hr class="my-4">
+  <a class="btn btn-primary btn-lg" href="https://water.org/donate/" role="button">Donate to Water.org</a>
+</div>
+
+<div class="jumbotron jumbotronDark">
+  <h1 class="display-4">Blood : Water</h1>
+  <p class="lead">Blood : Water partners with Africa's hidden heroes to provide technical, financial, and organizational support to strengthen their reach and effectiveness to the communities they serve.
+</p>
+  <p class="lead">Blood : Water works with local partners to provide access to clean water through a wide range of technologies. With knowledge of the local context,  partners select the technology that will be most effective in the community where they are working based on environmental, cultural, economic,
+  and technological factors to optimize quantity, quality, access, and reliability. In many cases, a combination of technologies is required to achieve these goals.</p>
+  <hr class="my-4">
+  <div class="card-deck">
+  <div class="card">
+    <img src="/static/images/globe.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Focus on Partners</h5>
+      <p class="card-text">Blood : Water leads a competitive selection process to find Africa's hidden heroes already working with the cultural and community knowledge to facilitate real change. They partner with these passionate groups to provide comprehensive support to strengthen their reach and effectiveness in the communities they serve.
+</p>
+    </div>
+    <div class="card-footer">
+    </div>
+  </div>
+  <div class="card">
+    <img src="/static/images/partners.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Partners Build Communities</h5>
+      <p class="card-text">Their partners mobilize their communities toward social change. They begin by organizing committee meetings, support groups, and local trainings. This equips communities to be active participants in addressing their own water and HIV/AIDS challenges.
+</p>
+      <p class="card-text">This focus on local communities gives Blood : Water the platform to effect lasting change within the communities as those who are affected directly contribute to solutions.</p>
+    </div>
+    <div class="card-footer">
+    </div>
+  </div>
+</div>
+<p></p>
+  <a class="btn btn-primary btn-lg" href="https://fundraise.bloodwatermission.com/give/166025/#!/donation/checkout" role="button">Donate to Blood : Water</a>
+</div>
+
+<div class="jumbotron jumbotronBrown">
+  <h1 class="display-4">The Water Project</h1>
+  <p class="lead">The Water Project builds new wells, rehab neglected wells, construct rain catchment tanks, protect springs and install sand dams where appropriate.
+  They empower our in-country experts along with the communities themselves to determine what makes sense.</p>
+  <p class="lead">Each water project provides training and facilities where appropriate and takes a holistic approach to improving health through safe water.</p>
+  <div class="card-deck">
+  <div class="card">
+    <img src="/static/images/child1WP.jpeg" class="card-img-top" alt="...">
+  </div>
+  <div class="card">
+    <img src="/static/images/child2WP.jpeg" class="card-img-top" alt="...">
+  </div>
+  </div>
+  <hr class="my-4">
+  <p class="lead">Click below to read more about some inspirational individuals below.</p>
+  <a href="https://thewaterproject.org/community/interest_story"
+    <div class="card">
+      <img src="/static/images/stories.jpeg" class="card-img-top" alt="...">
+      <p> </p>
+      <a class="btn btn-primary btn-lg" href="https://thewaterproject.org/give-water" role="button">Donate to The Water Project</a>
+    </div>
+  </a>
+</div>
+
+{% else %}
+
+<p class="tagline">Hydrate better.</p>
+<p class="tagline">Learn more about the global water crisis.</p>
+<p class="tagline">Contribute to good.</p>
+<a href="/register" class="btn btn-secondary btn-lg btn-block">Join Now</a>
+
+{% endif %}
+
+
+{% endblock %}

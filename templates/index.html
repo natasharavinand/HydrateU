@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+<h1 id="mainheader">HydrateU</h1>
+<body background="/static/images/starterPage.jpeg">
+
+{% if session.user_id %}
+
+<div class="card text-center paddingbottom" id="headerMain">
+  <div class="card-body">
+    <h5 class="card-title">Hydrate better.</h5>
+    <p class="card-text">Click below to update or set your personal hydration goals.</p>
+    <a href="/goals" class="btn btn-primary">Goals</a>
+  </div>
+</div>
+<p> </p>
+
+
+<div class="card-deck">
+  <div class="card">
+    <img src="/static/images/waterdrop.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Hydration Log</h5>
+      <p class="card-text">Make sure you're staying on track your hydration goals.</p>
+      <a href="/hydrationLog" class="btn btn-primary">Log Now</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="/static/images/globe.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Global Water Crisis</h5>
+      <p class="card-text">Learn more about the global water crisis.</p>
+      <a href="/crisis" class="btn btn-primary">Learn More</a>
+    </div>
+  </div>
+  <div class="card">
+    <img src="/static/images/partners.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Take Action</h5>
+      <p class="card-text">Contribute to reputable organizations in the space.</p>
+      <a href="/contribute" class="btn btn-primary">Contribute Now</a>
+
+    </div>
+  </div>
+</div>
+
+{% else %}
+
+<p class="tagline">Hydrate better.</p>
+<p class="tagline">Learn more about the global water crisis.</p>
+<p class="tagline">Contribute to good.</p>
+<a href="/register" class="btn btn-secondary btn-lg btn-block">Join Now</a>
+<p> </p>
+<p class="paddingbottom"> </p>
+<div class="card-deck" style="text-align:center;">
+  <div class="card text-white bg-dark mb-3">
+    <div class="card-body">
+      <h5 class="card-title" style= "font-size:100px;">{{ usersHad }}</h5>
+      <p class="card-text">Users currently using HydrateU</p>
+    </div>
+  </div>
+  <div class="card text-white bg-dark mb-3">
+    <div class="card-body">
+      <h5 class="card-title" style= "font-size:100px;">{{ glassesDrank }}</h5>
+      <p class="card-text">Glasses Logged with HydrateU</p>
+    </div>
+  </div>
+  <div class="card text-white bg-dark mb-3">
+    <div class="card-body">
+      <h5 class="card-title" style= "font-size:100px;">{{ avgGoal }}</h5>
+      <p class="card-text">Average daily goal for glasses of water for a user using HydrateU</p>
+    </div>
+  </div>
+</div>
+
+
+
+{% endif %}
+
+
+{% endblock %}

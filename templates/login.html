@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <body background="/static/images/loginImage3.jpg">
+    <div class="jumbotron jumbotron-fluid jumboTransparent">
+      <div class="container">
+        <h1 class="display-4">Welcome back</h1>
+        <p class="lead">Log in here.</p>
+      </div>
+    </div>
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+{% endblock %}
