@@ -18,11 +18,11 @@ This will create a temporary server where you can see HydrateU.
 HydrateU makes use of the CS50 IDE (where it is housed), as well as Flask (also Session), Bootstrap, and SQLite. The site is built in HTML, CSS, and Python.
 A few of the files with pertinent information include:
 
-    -Static
+   -Static
         -Includes the folder "images" with the images the site has
         -styles.ccs, the CSS file the website uses
 
-    -Templates
+   -Templates
         -All of the webpage templates the site renders, including layout.html
         -application.py, where the Python code directing the website is sdtored
         -helpers.py, where helper functions like "apology" are stored
